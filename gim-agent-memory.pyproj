@@ -1,0 +1,217 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition="'$(Configuration)' == ''">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0AF34FCB-4079-4130-A1FE-209203D50127}</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>main.py</StartupFile>
+    <SearchPath>src</SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>gim-agent-memory</Name>
+    <RootNamespace>gim</RootNamespace>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <CommandLineArguments>workshop-demo --seed 2026 --workshops 3 --episodes 12 --output runs/workshop-g0-g1-demo.json</CommandLineArguments>
+    <InterpreterId>MSBuild|gim-venv|$(MSBuildProjectFullPath)</InterpreterId>
+    <TestFramework>unittest</TestFramework>
+    <UnitTestRootDirectory>tests</UnitTestRootDirectory>
+    <UnitTestPattern>test_*.py</UnitTestPattern>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="benchmarks\benchmark_storage.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="main.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\gim\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\gim\agent.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\gim\cli.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\gim\config.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\gim\consolidation_policy.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\gim\distiller.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\gim\embedder.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\gim\environment.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\gim\experiment_logger.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\gim\experiment_runner.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\gim\generation_runner.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\gim\memory_item.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\gim\memory_store.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\gim\pruning_policy.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\gim\retrieval_policy.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\gim\trajectory.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\gim\utility_estimator.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\gim\utility_predictor.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\gim\vector_index.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\gim\workshop_contract.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\gim\workshop_demo.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\gim\workshop_distiller.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\gim\workshop_environment.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\gim\workshop_policy.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tests\test_episode.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tests\test_generation.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tests\test_measurements.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tests\test_memory.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tests\test_workshop_demo.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tests\test_workshop_distiller.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tests\test_workshop_environment.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tests\test_workshop_policy.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tests\validation_scenarios.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="benchmarks\__init__.py"><SubType>Code</SubType></Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="benchmarks\iteration_suite.py"><SubType>Code</SubType></Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="benchmarks\benchmark_compaction.py"><SubType>Code</SubType></Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="tests\test_iteration_suite.py"><SubType>Code</SubType></Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="tests\test_compaction_equivalence.py"><SubType>Code</SubType></Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="README.md" />
+    <Content Include="pyproject.toml" />
+    <Content Include="requirements-dev.txt" />
+    <Content Include=".gitignore" />
+    <Content Include="docs\00-abstract-and-hypotheses.md" />
+    <Content Include="docs\01-pseudocode-file-map.md" />
+    <Content Include="docs\03-architecture-diagram.md" />
+    <Content Include="docs\04-bibliography.md" />
+    <Content Include="docs\05-implementation-and-research.md" />
+    <Content Include="docs\06-proposed-phase-a-and-split.md" />
+    <Content Include="docs\07-verification.md" />
+    <Content Include="docs\08-centroid-storage-design.md" />
+    <Content Include="docs\09-storage-benchmark.md" />
+    <Content Include="docs\10-workshop-g0-g1.md" />
+    <Content Include="docs\11-source-outcome-and-local-evidence.md" />
+    <Content Include="docs\12-visual-studio.md" />
+    <Content Include="docs\13-performance-and-ablation.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\" />
+    <Folder Include="src\gim\" />
+    <Folder Include="tests\" />
+    <Folder Include="benchmarks\" />
+    <Folder Include="docs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include=".venv\">
+      <Id>gim-venv</Id>
+      <Version>3.12</Version>
+      <Description>GIM Python 3.12.14 (.venv)</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <PropertyGroup>
+    <PythonCommands>GimWorkshop;GimCheck;GimStatus;GimStorageBenchmark;GimIterationSuite;$(PythonCommands)</PythonCommands>
+  </PropertyGroup>
+  <Target Name="GimWorkshop" Label="GIM - Workshop demo" Returns="@(Commands)">
+    <CreatePythonCommandItem Target="$(MSBuildProjectDirectory)\main.py" TargetType="script" Arguments="workshop-demo --seed 2026 --workshops 3 --episodes 12 --output runs/workshop-g0-g1-demo.json" WorkingDirectory="$(MSBuildProjectDirectory)" ExecuteIn="output">
+      <Output TaskParameter="Command" ItemName="Commands" />
+    </CreatePythonCommandItem>
+  </Target>
+  <Target Name="GimCheck" Label="GIM - All tests" Returns="@(Commands)">
+    <CreatePythonCommandItem Target="$(MSBuildProjectDirectory)\main.py" TargetType="script" Arguments="check" WorkingDirectory="$(MSBuildProjectDirectory)" ExecuteIn="output">
+      <Output TaskParameter="Command" ItemName="Commands" />
+    </CreatePythonCommandItem>
+  </Target>
+  <Target Name="GimStatus" Label="GIM - Status" Returns="@(Commands)">
+    <CreatePythonCommandItem Target="$(MSBuildProjectDirectory)\main.py" TargetType="script" Arguments="status" WorkingDirectory="$(MSBuildProjectDirectory)" ExecuteIn="output">
+      <Output TaskParameter="Command" ItemName="Commands" />
+    </CreatePythonCommandItem>
+  </Target>
+  <Target Name="GimStorageBenchmark" Label="GIM - Storage benchmark" Returns="@(Commands)">
+    <CreatePythonCommandItem Target="$(MSBuildProjectDirectory)\benchmarks\benchmark_storage.py" TargetType="script" Arguments="--output runs/storage-benchmark.json" WorkingDirectory="$(MSBuildProjectDirectory)" ExecuteIn="output">
+      <Output TaskParameter="Command" ItemName="Commands" />
+    </CreatePythonCommandItem>
+  </Target>
+  <Target Name="GimIterationSuite" Label="GIM - Iteration suite" Returns="@(Commands)">
+    <CreatePythonCommandItem Target="$(MSBuildProjectDirectory)\benchmarks\iteration_suite.py" TargetType="script" Arguments="--label vs-$([System.DateTime]::UtcNow.ToString('yyyyMMdd-HHmmss-fff')) --profile" WorkingDirectory="$(MSBuildProjectDirectory)" ExecuteIn="output">
+      <Output TaskParameter="Command" ItemName="Commands" />
+    </CreatePythonCommandItem>
+  </Target>
+</Project>

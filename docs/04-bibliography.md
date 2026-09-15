@@ -8,6 +8,12 @@ Grouped by the decision each entry bears on. Entries marked VERIFY have not been
 
 These decide what you may claim. Read them first; sections 2 and 28 of the master plan cannot be answered without them.
 
+El Cham, Edgard. WritePolicyBench: Benchmarking Memory Write Policies under Byte Budgets. arXiv:2602.02574v1, 31 January 2026. Preprint. [Primary source](https://arxiv.org/abs/2602.02574v1); [full text](https://arxiv.org/html/2602.02574v1).
+Evaluates external-memory write, merge and eviction policies under a strict byte budget with an explicit cost model and budget-efficiency metrics. Directly relevant to GIM's audited-cap comparison: byte-budgeted memory evaluation is existing work. GIM's proposed successor-agent outcomes and counterfactual utility measurements must be positioned against this benchmark, without claiming to introduce memory budgets. Author, title, identifier, version and date verified against the primary arXiv record on 2026-09-14; results have not been independently reproduced here.
+
+Wu, Beining; Ding, Zihao; Huang, Jun; Zhao, Yanxiao. Forget to Improve: On-Device LLM-Agent Continual Learning via Budget-Curated Memory. arXiv:2606.25115v1, 23 June 2026. Preprint. [Primary source](https://arxiv.org/abs/2606.25115v1); [full text](https://arxiv.org/html/2606.25115v1).
+The CURATOR system uses net value per byte to retain, share and assess the trust of experience memory for agents with frozen weights. Its budgeted retention and provenance treatment make it close prior work for GIM's utility-aware retention question. Compare its resource accounting and utility signal with GIM's declared persistent-byte audit and paired successor rollouts; RAM, serialized storage, energy and token costs require distinct measurements. Authors, title, identifier, version and date verified against the primary arXiv record on 2026-09-14; results have not been independently reproduced here.
+
 Ouyang, S. et al. ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory. arXiv:2509.25140.
 Distills generalizable reasoning strategies from an agent's self-judged successful AND failed experiences; retrieves at test time and integrates new learnings back. Also introduces memory-aware test-time scaling. Evaluated on WebArena, Mind2Web, SWE-bench-Verified. This is the closest paper to your positive/negative distillation claim — the strata idea is not yours unless you can name a specific difference. Note what it does not do: no byte budget, no consolidation into prototypes, no eviction policy.
 

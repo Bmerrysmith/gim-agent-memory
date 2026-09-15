@@ -1,0 +1,6 @@
+# Optional verification/packaging tools. The runtime uses the standard library.
+mypy==1.11.2
+mypy-extensions==1.1.0
+typing-extensions==4.16.0
+ruff==0.6.9
+setuptools==80.9.0
